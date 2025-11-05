@@ -3,90 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Charu Ameta| Portfolio & CV</title>
+  <title>Charu Ameta | Portfolio & CV</title>
   <style>
     body {
-      font-family: 'Playfair Display', 'Lato';
+      font-family: 'Playfair Display', 'Lato', sans-serif;
       margin: 0;
-      background: linear-gradient(120deg, #f8f9ff, #e8f0fe);
-      color: #333;
+      background: linear-gradient(120deg, #E8F1F2, #1B98E0);
+      color: #13293D;
     }
+
+    /* ---------------- Header Banner ---------------- */
     header {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(90deg,#13293D, #006494, #247BA0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 3rem 1.5rem;
+      background: linear-gradient(90deg, #13293D, #006494, #247BA0);
       color: #E8F1F2;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      text-align: left;
+      gap: 2rem;
     }
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
+
+    .banner-img {
+      width: 350px;
+      height: 200px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 3px solid #E8F1F2;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
     }
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
+
+    .banner-img:hover {
+      transform: scale(1.03);
     }
+
+    .intro-text {
+      max-width: 500px;
+    }
+
+    .intro-text h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
+      background: linear-gradient(90deg, #E8F1F2, #1B98E0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .intro-text p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    /* ---------------- Main Sections ---------------- */
     section {
       max-width: 1000px;
       margin: 2rem auto;
-      background: white;
+      background: #E8F1F2;
       padding: 2rem;
       border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
+
     h2 {
-      color: #2575fc;
-      border-bottom: 3px solid #6a11cb;
+      font-size: 1.8rem;
+      background: linear-gradient(90deg, #13293D, #247BA0, #1B98E0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       display: inline-block;
-      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
     }
+
     .experience, .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.5rem;
     }
+
     .card {
-      background: #f5f7ff;
+      background: linear-gradient(180deg, #E8F1F2, #d7e8ed);
       border-radius: 12px;
-      padding: 1rem;
-      transition: transform 0.3s ease;
+      padding: 1.2rem;
+      border-left: 6px solid #1B98E0;
+      transition: all 0.3s ease;
     }
+
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     }
+
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 0.7rem;
     }
+
     .skill {
-      background: #2575fc;
-      color: white;
-      padding: 0.5rem 1rem;
+      background: #247BA0;
+      color: #E8F1F2;
+      padding: 0.6rem 1.2rem;
       border-radius: 25px;
       font-size: 0.9rem;
+      transition: background 0.3s ease;
     }
+
+    .skill:hover {
+      background: #1B98E0;
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
-      color: #555;
+      background: #13293D;
+      color: #E8F1F2;
     }
+
     a {
-      color: #2575fc;
+      color: #006494;
       text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #1B98E0;
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Charu</h1>
-    <p>Fintech Enthusiast | Analyst | Creative Thinker</p>
+    <img src="banner-photo.jpg" alt="Charu Ameta Photo" class="banner-img">
+    <div class="intro-text">
+      <h1>Charu Ameta</h1>
+      <p>Fintech Enthusiast | Analyst | Creative Thinker</p>
+    </div>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
     <p>
-    Hi, I’m Charu — a commerce student passionate about blending finance, data, and strategy to uncover meaningful business insights. 
-    With a strong foundation in accounting, financial modelling, and analytics, I aim to bridge the gap between traditional finance and data-driven decision-making.  
+      Hi, I’m Charu — a commerce student passionate about blending finance, data, and strategy to uncover meaningful business insights.
+      With a strong foundation in accounting, financial modelling, and analytics, I aim to bridge the gap between traditional finance and data-driven decision-making.
     </p>
   </section>
 
@@ -95,17 +156,18 @@
     <div class="experience">
       <div class="card">
         <h3>Finance Intern — Birla Corporation Limited</h3>
-        <p>I built SARIMA forecasting models to project future sales, estimating growth beyond ₹3,100 crore, and performed a variance analysis on power and fuel costs.
-          My analysis confirmed that 30–35% of the company’s energy usage was sourced from renewables, aligning with its sustainability goals.</p>
+        <p>Built SARIMA forecasting models to project future sales (beyond ₹3,100 crore) and performed variance analysis on power and fuel costs.
+        Confirmed that 30–35% of energy usage was renewable, aligning with sustainability goals.</p>
       </div>
       <div class="card">
-        <h3> Data Analyst Intern — High Sky IT Solutions –</h3>
-        <p>Worked on end-to-end data analysis tasks — from data collection and cleaning using Python (achieving 70% accuracy) to developing dashboards in Tableau and Power BI that transformed complex datasets into meaningful insights. 
-          I applied statistical techniques to identify key business trends and prepared detailed reports and presentations that supported strategic decision-making and improved overall analytical efficiency.</p>
+        <h3>Data Analyst Intern — High Sky IT Solutions</h3>
+        <p>Executed data cleaning and analysis using Python and created Tableau/Power BI dashboards to convert raw data into strategic insights.
+        Improved data accuracy by 70% and developed reports supporting decision-making efficiency.</p>
       </div>
-       <div class="card">
-        <h3> Social Intern — Craft Silicon Foundation –</h3>
-        <p>Worked on the project ‘Education on Wheels’ by the CSR. Prepared students for technical courses like Excel, Web Development, etc. </div>
+      <div class="card">
+        <h3>Social Intern — Craft Silicon Foundation</h3>
+        <p>Worked on the ‘Education on Wheels’ CSR project — trained students in Excel, Web Development, and other digital skills to promote inclusive education.</p>
+      </div>
     </div>
   </section>
 
@@ -114,15 +176,15 @@
     <div class="projects">
       <div class="card">
         <h3>Cement Industry Analysis & Forecasting</h3>
-        <p>Conducted an in-depth industry analysis of the Indian cement sector, covering market structure, key competitors, and sustainability trends</p>
+        <p>Performed an in-depth market and competitor analysis of the Indian cement industry with forecasting using time-series models.</p>
       </div>
       <div class="card">
-        <h3>Analysis and Comparison of companies' financial performance over the years</h3>
-        <p> Conducted multi-year financial performance analysis and comparison of companies using ratios and trend analysis to evaluate growth and efficiency.</p>
+        <h3>Company Financial Performance Analysis</h3>
+        <p>Compared multi-year financial data across firms using ratio and trend analysis to assess growth, profitability, and efficiency.</p>
       </div>
       <div class="card">
-        <h3>Analysis of Social and Economic Indicators Across Countries - Dashboard Presentation</h3>
-        <p>Built an interactive dashboard to analyze and present social & economic indicators across countries, highlighting global development patterns.</p>
+        <h3>Global Development Indicators Dashboard</h3>
+        <p>Created an interactive Power BI dashboard comparing social and economic indicators across countries, highlighting growth disparities.</p>
       </div>
     </div>
   </section>
@@ -134,17 +196,17 @@
       <div class="skill">Market Research</div>
       <div class="skill">Financial Analysis</div>
       <div class="skill">Data Visualization</div>
-      <div class="skill">Presentation & Storytelling</div>
       <div class="skill">Forecasting & Modelling</div>
+      <div class="skill">Presentation & Storytelling</div>
       <div class="skill">Leadership</div>
-       <div class="skill">Decision-Making</div>
+      <div class="skill">Decision-Making</div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>📩 Email: <a href="mailto:ameta.charu2004@email.com">yourname@email.com</a></p>
-    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/charuameta" target="_blank">linkedin.com/in/charu</a></p>
+    <p>📩 Email: <a href="mailto:ameta.charu2004@email.com">ameta.charu2004@email.com</a></p>
+    <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/charuameta" target="_blank">linkedin.com/in/charuameta</a></p>
   </section>
 
   <footer>
