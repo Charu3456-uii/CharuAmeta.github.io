@@ -131,6 +131,54 @@
       background: #1B98E0;
       transform: scale(1.05);
     }
+  /* ---------------- Resume & Feedback ---------------- */
+  .resume-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #006494, #1B98E0);
+    color: #E8F1F2;
+    padding: 0.8rem 1.6rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  .resume-btn:hover {
+    background: linear-gradient(90deg, #13293D, #247BA0);
+    transform: scale(1.05);
+  }
+
+  .feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 500px;
+  }
+
+  .feedback-form input,
+  .feedback-form textarea {
+    padding: 0.8rem;
+    border: 2px solid #1B98E0;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+  }
+
+  .feedback-form button {
+    background: linear-gradient(90deg, #247BA0, #1B98E0);
+    color: #E8F1F2;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .feedback-form button:hover {
+    background: linear-gradient(90deg, #006494, #13293D);
+    transform: translateY(-2px);
+  }
 
     footer {
       text-align: center;
@@ -242,6 +290,23 @@
     <h2>Contact</h2>
     <p>📩 Email: <a href="mailto:ameta.charu2004@email.com">ameta.charu2004@email.com</a></p>
     <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/charuameta" target="_blank">linkedin.com/in/charuameta</a></p>
+  </section>
+ 
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>Click below to download my resume:</p>
+    <a href="Charu's Resume.pdf" download class="resume-btn">Download Resume</a>
+  </section>
+
+  <section id="feedback">
+    <h2>Feedback</h2>
+    <p>Have a question, suggestion, or opportunity? Drop a message below:</p>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="feedback-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message..." rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
