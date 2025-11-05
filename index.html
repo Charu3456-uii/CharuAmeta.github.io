@@ -4,68 +4,84 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Charu Ameta | Portfolio & CV</title>
+
   <style>
+    /* ---------------- General Styling ---------------- */
     body {
       font-family: 'Playfair Display', 'Lato', sans-serif;
       margin: 0;
       background: linear-gradient(120deg, #E8F1F2, #1B98E0);
       color: #13293D;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
-  /* ---------------- Header Banner ---------------- */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 3rem 1.5rem;
-  background: linear-gradient(90deg, #13293D, #006494, #247BA0);
-  color: #E8F1F2;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  text-align: left;
-  gap: 2rem;
-}
+    /* ---------------- Header Banner ---------------- */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 3rem 1.5rem;
+      background: linear-gradient(90deg, #13293D, #006494, #247BA0);
+      color: #E8F1F2;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      text-align: left;
+      gap: 2rem;
+      animation: fadeIn 1.2s ease-out;
+    }
 
-.banner-img {
-  width: 350px;
-  height: 200px;
-  border-radius: 16px;
-  object-fit: cover;
-  border: 3px solid #E8F1F2;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
+    .banner-img {
+      width: 400px;
+      height: 220px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 3px solid #E8F1F2;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: slideIn 1.2s ease-out;
+    }
 
-.banner-img:hover {
-  transform: scale(1.03);
-}
+    .banner-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
 
-.intro-text {
-  max-width: 500px;
-}
+    .intro-text {
+      max-width: 520px;
+      animation: slideUp 1.2s ease-out;
+    }
 
-.intro-text h1 {
-  font-size: 3rem;
-  margin-bottom: 0.3rem;
-  background: linear-gradient(90deg, #E8F1F2, #1B98E0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+    .intro-text h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.4rem;
+      background: linear-gradient(90deg, #E8F1F2, #1B98E0, #E8F1F2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-.intro-text p {
-  font-size: 1.1rem;
-  opacity: 0.95;
-}
-
+    .intro-text p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      letter-spacing: 0.5px;
+    }
 
     /* ---------------- Main Sections ---------------- */
     section {
       max-width: 1000px;
-      margin: 2rem auto;
+      margin: 2.5rem auto;
       background: #E8F1F2;
       padding: 2rem;
       border-radius: 16px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     h2 {
@@ -108,11 +124,12 @@ header {
       padding: 0.6rem 1.2rem;
       border-radius: 25px;
       font-size: 0.9rem;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
 
     .skill:hover {
       background: #1B98E0;
+      transform: scale(1.05);
     }
 
     footer {
@@ -120,6 +137,7 @@ header {
       padding: 2rem;
       background: #13293D;
       color: #E8F1F2;
+      font-size: 0.95rem;
     }
 
     a {
@@ -132,12 +150,28 @@ header {
       text-decoration: underline;
       color: #1B98E0;
     }
+
+    /* ---------------- Animations ---------------- */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(-40px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
   </style>
 </head>
 
 <body>
   <header>
-    <img src="banner-photo.jpg" alt="Charu Ameta Photo" class="banner-img">
+    <img src="banner-photo.jpg" alt="Charu Ameta" class="banner-img">
     <div class="intro-text">
       <h1>Charu Ameta</h1>
       <p>Fintech Enthusiast | Analyst | Creative Thinker</p>
@@ -213,5 +247,17 @@ header {
   <footer>
     <p>© 2025 Charu Ameta | Designed with 💙 by me</p>
   </footer>
+
+  <script>
+    // Fade-in animation on scroll
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach((section) => {
+        const top = section.getBoundingClientRect().top;
+        if (top < trigger) section.classList.add("visible");
+      });
+    });
+  </script>
 </body>
 </html>
