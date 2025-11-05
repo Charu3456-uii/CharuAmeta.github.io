@@ -1,64 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charu | Portfolio & CV</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f9fa;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(120deg, #f8f9ff, #e8f0fe);
       color: #333;
-      margin: 40px auto;
-      max-width: 800px;
-      line-height: 1.6;
     }
     header {
       text-align: center;
-      margin-bottom: 40px;
+      padding: 3rem 1rem;
+      background: linear-gradient(90deg, #6a11cb, #2575fc);
+      color: white;
     }
-    h1 {
-      color: #0078d4;
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
     }
     section {
-      margin-bottom: 30px;
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
-    .project {
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    h2 {
+      color: #2575fc;
+      border-bottom: 3px solid #6a11cb;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    .experience, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #f5f7ff;
+      border-radius: 12px;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    .skill {
+      background: #2575fc;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #555;
+    }
+    a {
+      color: #2575fc;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Your Name</h1>
-    <p>Business Strategy Enthusiast | Case Study Writer | Portfolio</p>
+    <h1>Charu</h1>
+    <p>Business Strategist | Analyst | Creative Thinker</p>
   </header>
 
-  <section>
+  <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I'm passionate about analyzing and writing case studies on business models and strategies. This site showcases my work and insights into successful (and failed) business approaches.</p>
+    <p>
+      Hi, I’m Charu — a business strategy enthusiast passionate about understanding how companies grow, innovate, and lead change. 
+      My approach blends creativity with analytical thinking to solve real-world problems and craft meaningful business solutions.
+    </p>
   </section>
 
-  <section>
-    <h2>Projects / Case Studies</h2>
-    <div class="project">
-      <h3>Netflix: Reinventing Through Data-Driven Strategy</h3>
-      <p>A deep dive into how Netflix used data analytics to pivot its business model and maintain market leadership.</p>
-    </div>
-    <div class="project">
-      <h3>Apple: The Power of Ecosystem Lock-In</h3>
-      <p>An analysis of Apple’s long-term competitive advantage through ecosystem design.</p>
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="experience">
+      <div class="card">
+        <h3>Strategy Intern — ABC Consulting</h3>
+        <p>Worked on market entry analysis for a tech startup, identifying growth opportunities and strategic partnerships.</p>
+      </div>
+      <div class="card">
+        <h3>Business Analyst — XYZ Ltd.</h3>
+        <p>Collaborated on business model redesign projects and supported data-driven decision-making through financial analysis.</p>
+      </div>
     </div>
   </section>
 
-  <section>
+  <section id="projects">
+    <h2>Projects & Case Studies</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Netflix Strategy Breakdown</h3>
+        <p>Analyzed Netflix’s content investment strategy and its impact on user retention and global expansion.</p>
+      </div>
+      <div class="card">
+        <h3>Apple’s Brand Ecosystem</h3>
+        <p>Explored how Apple creates value through seamless integration and customer experience design.</p>
+      </div>
+      <div class="card">
+        <h3>Local Startup Growth Plan</h3>
+        <p>Developed a go-to-market plan for a regional brand aiming to scale into new markets.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">Business Analysis</div>
+      <div class="skill">Market Research</div>
+      <div class="skill">Strategy Design</div>
+      <div class="skill">Data Visualization</div>
+      <div class="skill">Presentation & Storytelling</div>
+      <div class="skill">Leadership</div>
+    </div>
+  </section>
+
+  <section id="contact">
     <h2>Contact</h2>
-    <p>📧 your.email@example.com</p>
-    <p>💼 <a href="https://www.linkedin.com/">LinkedIn</a></p>
+    <p>📩 Email: <a href="mailto:yourname@email.com">yourname@email.com</a></p>
+    <p>🔗 LinkedIn: <a href="https://www.linkedin.com" target="_blank">linkedin.com/in/charu</a></p>
   </section>
+
+  <footer>
+    <p>© 2025 Charu | Designed with 💙 by me</p>
+  </footer>
 </body>
 </html>
